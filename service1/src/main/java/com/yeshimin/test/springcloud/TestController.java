@@ -43,12 +43,10 @@ public class TestController {
                 discoveryClient.getInstances("service1-instance-appname");
         logger.info("get by eureka.instance.appname - listServiceInstance.size: " + listServiceInstance.size());
 
-
         // get by spring.application.name
         List<ServiceInstance> listServiceInstance2 =
                 discoveryClient.getInstances("service1-application-name");
         logger.info("get by spring.application.name - listServiceInstance.size: " + listServiceInstance.size());
-
 
         return "test";
     }
