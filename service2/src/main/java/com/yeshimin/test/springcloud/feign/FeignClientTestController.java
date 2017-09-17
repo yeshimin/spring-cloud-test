@@ -27,4 +27,11 @@ public class FeignClientTestController {
 
         return feignClientTestService.test();
     }
+
+    @GetMapping("test2")
+    public String test2() {
+        logger.info("FeignClientTestController.test2()");
+
+        return feignClientTestService.test2();
+    }
 }

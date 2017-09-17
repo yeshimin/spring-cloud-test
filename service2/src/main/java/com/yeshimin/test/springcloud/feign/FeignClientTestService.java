@@ -1,7 +1,7 @@
 package com.yeshimin.test.springcloud.feign;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * Feign client test service
@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author yeshimin
  * @since 2017-09-12
  */
-@FeignClient("service1-application-name")
+@FeignClient(name = "service1-application-name", fallback = FeignCallTestHystrixFallback.class)
 public interface FeignClientTestService {
 
-    @RequestMapping("/feignserver/test")
+    @GetMapping("/feignserver/test")
     String test();
+
+    @GetMapping("/hystrixserver/test2")
+    String test2();
 }
