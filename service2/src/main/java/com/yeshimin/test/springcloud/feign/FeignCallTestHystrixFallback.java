@@ -27,4 +27,11 @@ public class FeignCallTestHystrixFallback implements FeignClientTestService {
 
         return "FeignCallTestHystrixFallback.test2";
     }
+
+    @Override
+    public String sleuthservertest() {
+        logger.info("FeitnCallTestHystrixFallback.sleuthservertest()");
+
+        return "FeithCallTestHystrixFallback.sleuthservertest";
+    }
 }

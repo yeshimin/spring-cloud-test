@@ -17,4 +17,7 @@ public interface FeignClientTestService {
 
     @GetMapping("/hystrixserver/test2")
     String test2();
+
+    @GetMapping("/sleuthserver/test")
+    String sleuthservertest();
 }
